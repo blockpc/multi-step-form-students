@@ -1,5 +1,5 @@
 @extends('layouts.web')
 
 @section('content')
-    <h1>Home Page</h1>
+<h1>Home Page</h1><hr>
 @endsection
