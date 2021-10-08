@@ -1,6 +1,7 @@
 <div class="max-w-3xl mx-auto px-4 py-10">
     <form wire:submit.prevent="register">
         {{-- Step 1 --}}
+        @if ( $currentStep == 1 )
         <div class="mb-5 bg-gray-300" id="step-one">
             <div class="mb-5 bg-gray-700 p-2">
                 <div class="text-md font-bold text-gray-300 leading-tight">Step 1/4 - Your Profile</div>
@@ -46,8 +47,10 @@
                 </div>
             </div>
         </div>
+        @endif
 
         {{-- Step 2 --}}
+        @if ( $currentStep == 2 )
         <div class="mb-5 bg-gray-300" id="step-two">
             <div class="mb-5 bg-gray-700 p-2">
                 <div class="text-md font-bold text-gray-300 leading-tight">Step 2/4 - Address & Contacts</div>
@@ -89,8 +92,10 @@
                 </div>
             </div>
         </div>
+        @endif
 
         {{-- Step 3 --}}
+        @if ( $currentStep == 3 )
         <div class="mb-5 bg-gray-300" id="step-three">
             <div class="mb-5 bg-gray-700 p-2">
                 <div class="text-md font-bold text-gray-300 leading-tight">Step 3/4 - Frameworks Experience</div>
@@ -118,8 +123,10 @@
                 <div class="text-red-700">@error('frameworks'){{ $message }}@enderror</div>
             </div>
         </div>
+        @endif
 
         {{-- Step 4 --}}
+        @if ( $currentStep == 4 )
         <div class="mb-5 bg-gray-300" id="step-four">
             <div class="mb-5 bg-gray-700 p-2">
                 <div class="text-md font-bold text-gray-300 leading-tight">Step 4/4 - Attachments</div>
@@ -146,13 +153,23 @@
                 </div>
             </div>
         </div>
+        @endif
 
         {{-- Actions buttons --}}
         <div class="mb-5 bg-gray-300" id="actions-buttons">
             <div class="flex justify-between p-2">
-                <button class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Back</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Next</button>
+                @if ( $currentStep == 1 )
+                    <div class=""></div>
+                @endif
+                @if ( $currentStep > 1 )
+                <button wire:click="decreaseStep()" class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Back</button>
+                @endif
+                @if ( $currentStep < 4 )
+                <button wire:click="increaseStep()" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Next</button>
+                @endif
+                @if ( $currentStep == 4 )
                 <button class="bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded">Submit</button>
+                @endif
             </div>
         </div>
     </form>

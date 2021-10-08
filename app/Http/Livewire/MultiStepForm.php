@@ -22,9 +22,29 @@ class MultiStepForm extends Component
     public $frameworks = [];
     public $cv;
     public $terms;
+
+    public $totalStep = 4;
+    public $currentStep = 1;
+
+    public function mount() {
+        $this->currentStep = 1;
+    }
     
     public function render()
     {
         return view('livewire.multi-step-form');
+    }
+
+    public function increaseStep() {
+        $this->currentStep++;
+    }
+
+    public function decreaseStep() {
+        $this->currentStep--;
+    }
+
+    public function register()
+    {
+        $this->currentStep = 1;
     }
 }
