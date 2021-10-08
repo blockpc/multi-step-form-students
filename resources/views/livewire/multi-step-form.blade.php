@@ -10,40 +10,39 @@
                 <div class="">
                     <label for="firstname" class="font-bold mb-1 text-gray-700 block">Firstname</label>
                     <input wire:model="first_name" type="text"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('first_name') border border-red-600 @enderror"
                         placeholder="Enter your firstname..." id="firstname">
-                        <div class="text-red-700">@error('first_name'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('first_name'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="lastname" class="font-bold mb-1 text-gray-700 block">Lastname</label>
                     <input wire:model="last_name" type="text"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('last_name') border border-red-600 @enderror"
                         placeholder="Enter your lastname..." id="lastname">
-                        <div class="text-red-700">@error('last_name'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('last_name'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="gender" class="font-bold mb-1 text-gray-700 block">Gender</label>
-                    <select wire:model="gender" class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium" id="gender">
+                    <select wire:model="gender" class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('gender') border border-red-600 @enderror" id="gender">
                         <option value="" selected>Select One...</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="no-binary">No Binary</option>
                     </select>
-                    <div class="text-red-700">@error('gender'){{ $message }}@enderror</div>
+                    <div class="text-red-700 text-sm">@error('gender'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="age" class="font-bold mb-1 text-gray-700 block">Age</label>
                     <input wire:model="age" type="text"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('age') border border-red-600 @enderror"
                         placeholder="Enter your age..." id="age">
-                        <div class="text-red-700">@error('age'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('age'){{ $message }}@enderror</div>
                 </div>
                 <div class="col-span-2">
                     <label for="description" class="font-bold mb-1 text-gray-700 block">Description</label>
                     <textarea wire:model="description"
                         class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
                         placeholder="Enter your description..." id="description"></textarea>
-                        <div class="text-red-700">@error('description'){{ $message }}@enderror</div>
                 </div>
             </div>
         </div>
@@ -59,20 +58,20 @@
                 <div class="">
                     <label for="email" class="font-bold mb-1 text-gray-700 block">Email Address</label>
                     <input wire:model="email" type="email"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('email') border border-red-600 @enderror"
                         placeholder="Enter your email address..." id="email">
-                        <div class="text-red-700">@error('email'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('email'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="phone" class="font-bold mb-1 text-gray-700 block">Phone</label>
                     <input wire:model="phone" type="text"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('phone') border border-red-600 @enderror"
                         placeholder="Enter your phone..." id="phone">
-                        <div class="text-red-700">@error('phone'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('phone'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="country" class="font-bold mb-1 text-gray-700 block">Country</label>
-                    <select wire:model="country" class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium" id="country">
+                    <select wire:model="country" class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('country') border border-red-600 @enderror" id="country">
                         <option value="" selected>Select One...</option>
                         <option value="chile">Chile</option>
                         <option value="argentina">Argentina</option>
@@ -81,14 +80,14 @@
                         <option value="colombia">Colombia</option>
                         <option value="uruguay">Uruguay</option>
                     </select>
-                    <div class="text-red-700">@error('country'){{ $message }}@enderror</div>
+                    <div class="text-red-700 text-sm">@error('country'){{ $message }}@enderror</div>
                 </div>
                 <div class="">
                     <label for="city" class="font-bold mb-1 text-gray-700 block">City</label>
                     <input wire:model="city" type="text"
-                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                        class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium @error('city') border border-red-600 @enderror"
                         placeholder="Enter your city..." id="city">
-                        <div class="text-red-700">@error('city'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('city'){{ $message }}@enderror</div>
                 </div>
             </div>
         </div>
@@ -111,16 +110,17 @@
                         <input wire:model="frameworks" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="codeIgniter" id="codeIgniter">
                         <span class="ml-2 text-gray-700">CodeIgniter</span>
                     </label>
-                    <label class="inline-flex items-center mt-3" for="synphony">
-                        <input wire:model="frameworks" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="synphony" id="synphony">
-                        <span class="ml-2 text-gray-700">Synphony</span>
+                    <label class="inline-flex items-center mt-3" for="symphony">
+                        <input wire:model="frameworks" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="symphony" id="symphony">
+                        <span class="ml-2 text-gray-700">Symphony</span>
                     </label>
                     <label class="inline-flex items-center mt-3" for="cakePHP">
                         <input wire:model="frameworks" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="cakePHP" id="cakePHP">
                         <span class="ml-2 text-gray-700">CakePHP</span>
                     </label>
                 </div>
-                <div class="text-red-700">@error('frameworks'){{ $message }}@enderror</div>
+                <div class="text-red-700 text-sm">@error('frameworks'){{ $message }}@enderror</div>
+                <div class="text-red-700 text-sm">@error('frameworks.*'){{ $message }}@enderror</div>
             </div>
         </div>
         @endif
@@ -144,11 +144,11 @@
                         </button>
                         <input wire:model="cv" class="cursor-pointer absolute block opacity-0 top-0 w-64" type="file">
                     </div>
-                    <div class="text-red-700">@error('cv'){{ $message }}@enderror</div>
+                    <div class="text-red-700 text-sm">@error('cv'){{ $message }}@enderror</div>
                     <label class="inline-flex items-center mt-3" for="terms">
                         <input wire:model="terms" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="terms" id="terms">
                         <span class="ml-2 text-gray-700">You must agree with our <a class="text-blue-600" href="#">terms and conditions</a></span>
-                        <div class="text-red-700">@error('terms'){{ $message }}@enderror</div>
+                        <div class="text-red-700 text-sm">@error('terms'){{ $message }}@enderror</div>
                     </label>
                 </div>
             </div>
