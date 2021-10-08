@@ -148,8 +148,8 @@
                     <label class="inline-flex items-center mt-3" for="terms">
                         <input wire:model="terms" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" value="terms" id="terms">
                         <span class="ml-2 text-gray-700">You must agree with our <a class="text-blue-600" href="#">terms and conditions</a></span>
-                        <div class="text-red-700 text-sm">@error('terms'){{ $message }}@enderror</div>
                     </label>
+                    <div class="text-red-700 text-sm">@error('terms'){{ $message }}@enderror</div>
                 </div>
             </div>
         </div>
@@ -162,10 +162,10 @@
                     <div class=""></div>
                 @endif
                 @if ( $currentStep > 1 )
-                <button wire:click="decreaseStep()" class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Back</button>
+                <button wire:click="decreaseStep" class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Back</button>
                 @endif
                 @if ( $currentStep < 4 )
-                <button wire:click="increaseStep()" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Next</button>
+                <button wire:click="increaseStep" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded" type="button">Next</button>
                 @endif
                 @if ( $currentStep == 4 )
                 <button class="bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 mx-1 rounded">Submit</button>

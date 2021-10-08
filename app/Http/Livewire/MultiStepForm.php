@@ -57,8 +57,25 @@ class MultiStepForm extends Component
                 'cv' => 'required|mimes:doc,docx,pdf|max:1024',
                 'terms' => 'required'
             ]);
+            $cv_name = "CV_".$this->cv->getClientOriginalName();
+            $upload_cv = $this->cv->storeAs('students_cvs', $cv_name);
+            $student['first_name'] = $this->first_name;
+            $student['last_name'] = $this->last_name;
+            $student['gender'] = $this->gender;
+            $student['age'] = $this->age;
+            $student['email'] = $this->email;
+            $student['phone'] = $this->phone;
+            $student['country'] = $this->country;
+            $student['city'] = $this->city;
+            $student['description'] = $this->description;
+            $student['frameworks'] = json_encode($this->frameworks);
+            $student['cv'] = $cv_name;
+            
+            Student::insert($student);
+            $this->currentStep = 1;
+            $this->reset();
+            return redirect()->route('registration-success');
         }
-        $this->currentStep = 1;
     }
 
     public function validateData()
