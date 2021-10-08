@@ -3,8 +3,8 @@
 Simple multi step form for students table
 
 – Creating Database & Model 
-`php artisan make:model Students -m`
-`php artisan migrate`
+`php artisan make:model Students -m`  
+`php artisan migrate`  
 
 – Make registration page  
 

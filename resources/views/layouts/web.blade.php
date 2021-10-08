@@ -29,7 +29,7 @@
         <div class="min-h-screen pt-16 flex flex-col justify-between">
             
             <!-- Page Content -->
-            <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2" id="main">
+            <main class="container mx-auto sm:px-6 lg:px-8 p-2" id="main">
                 @yield('content')
             </main>
 
